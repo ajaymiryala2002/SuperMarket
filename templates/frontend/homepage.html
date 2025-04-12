@@ -1,0 +1,390 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- <link rel="stylesheet" href="{% static 'CSS/style.css' %}"> -->
+    <style>
+      body
+      {
+        margin: 0;
+        padding: 0;
+      }
+        /* .seconddiv{
+            background-image:url("{% static 'IMAGES/banner-1.jpg' %}");
+            background-size:cover;
+        
+
+
+        }
+         */
+
+
+  
+         #bg-img {
+  background-image: url('/static/IMAGES/banner-1.jpg');
+  height: 90vh;
+  width: 100%;
+  background-size: cover; /* Keep this for larger screens */
+  background-position: center;
+  background-attachment: fixed;
+
+  
+}
+#sp1{
+  
+  font-size: 80px; /* Adjust the font size */
+  font-weight: bold; /* Optional: Makes the text bold */
+  color: #800000; /* Maroon text color */
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.5),  /* Slight shadow for depth */
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    3px 3px 6px rgba(0, 0, 0, 0.5);
+  border: 0px solid #800000; /* Border around the text */
+  padding:5px;
+
+  display: inline-block; /* Make the text an inline block element */
+  }
+  #sp2{
+    font-weight: bold;
+
+
+  }
+  .button-image{
+    display: inline-block;
+    border-radius:100%;
+   
+}
+.image-item{
+    display: inline-block;
+}
+.image-button {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents items from wrapping to the next line */
+    overflow-x:auto; /* Horizontal scroll */
+    gap: 10px; /* Adds space between items */
+    overflow-y: hidden;
+  }
+  .card{
+    display:inline-block;
+    /* margin-right:35px; */
+    flex-wrap: nowrap;
+    overflow:auto;
+  
+   
+    overflow-y: hidden;
+}
+  .col10{
+    display:inline-block;
+}
+  .card1{
+    height:150px;
+    width:100%;
+    
+  }
+  .image-name{
+    margin-left:50px;
+  }
+  /* General styling */
+/* General styling */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Scrollable wrapper */
+.scrolling-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap:25px;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar on IE */
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Product Card Styling */
+.product-card {
+    min-width: 200px;
+    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Image */
+.product-card img {
+    height: 150px;
+    object-fit: contain;
+    padding: 10px;
+    overflow: scroll;
+}
+
+/* Price styling */
+.text-muted {
+    font-size: 14px;
+}
+
+.text-danger {
+    font-size: 16px;
+}
+
+
+  .star-rating .fa-star,
+  .star-rating .fa-star-half-alt {
+  color: gold;
+  }
+
+
+
+
+@media (max-width: 626px) {
+  #bg-img {
+    background-size: cover; /* Ensures the full image is visible */
+    background-attachment: scroll; /* Disable fixed attachment for mobile */
+    height: auto; /* Adjust height to auto for mobile to avoid clipping */
+      background-repeat:no-repeat;
+
+
+  }
+  #sp1{
+  font-size:40px;
+  font-weight:bold;
+  color: maroon;
+}
+.button-image{
+  display: inline-block;
+    border-radius:100%;
+   
+
+}
+
+}
+
+
+    </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row p-1 border rounded bg-info">
+      <div class="col-6 col-md-3 col-lg-3 mb-1">
+  
+          <img src="/static/IMAGES/logo copy.svg" alt="Logo" class="img img-thumbnail img-responsive img-fluid">
+  
+      </div>
+        <div class="col-6 col-md-3 col-lg-3 mb-1">
+          <select id="select1" class="form-select form-select-sm">
+            <option > Choose </option>
+            <option>Icecream</option>
+            <option>Chocolates</option>
+        </select>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3 mb-1" >
+          <a href="{% url 'home1' %}" style="text-decoration:none;" class="btn btn-sm btn-outline-light fw-bold active">Home</a>
+
+          
+            
+      
+        </div>
+      <div class="col-6 col-md-3 col-lg-3 mb-1">
+        <!-- <div class="abc">
+         <input type="text" placeholder="Search.." class="form-control" class="w-50"><span>
+          <input type="submit" class="btn btn-sm btn-outline-primary"></span>
+          <button type="submit">submit</button> 
+        </div> -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control  form-control-sm" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-sm btn-secondary" type="button" id="button-addon2">Search</button>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+      <div id="bg-img" class="col">
+       <div class="col">
+        <h1 style="margin-left:10px;">
+          <span id="sp1" style="font-style:inherit;">ORganic</span>
+          <span id="sp2">Foods At</span>
+        </h1>
+        <h1 style="margin-left:10px;" >
+          <span id="sp2">Your</span>&nbsp;
+          <span id="sp1" >Doorsteps</span>
+      </h1>
+       </div>
+      
+     
+        <div class="col">
+          <p id="p1" style="margin-left:10px;font-weight:bold;" class="text-inline ">Dignissim massa diam elementum.</p>
+        </div>
+        <div class="col">
+          <a href="#" class="btn btn-success">SHOPING</a>
+          <a href="{% url 'signip' %}" class="btn btn-primary">JOIN NOW</a>
+    
+                
+          </div>
+          <div class="col-6 col-md-3 col-lg-3">
+            <h5 style="margin-top:50px;">
+              <span style="font-size:35px;font-style: italic;font-weight: bold;">14k+</span>
+              <span style="font-style:oblique;font-weight: bold;">PRODUCT VARIETES</span>
+              <span style="font-size:35px;font-style: italic;font-weight:bold;">50k+</span>
+              <span style="margin-left:10px;font-style: italic;font-weight: bold;">HAPPY CUSTOMERS</span>
+    
+          </h5>
+          </div>
+
+      </div>
+
+    </div>
+    <br>
+    <div class="row">
+      <h1 style="margin-left:10;">Category</h1>
+        <div class="image-button" style="border:none;">
+        <div class="image-item-b-2">
+
+         <a href="#"><img src="/static/IMAGES/apple1.jpg" alt="Apple" class="button-image"></a>
+          <div class="image-name" >Apple</div>
+        </div>
+        <div class="image-item">
+         <a href="{% url 'productsD'%}"><img src="/static/IMAGES/breds.jpg" alt="Breads" class="button-image"></a>
+          <div class="image-name">Breads</div>
+        </div>
+        <div class="image-item">
+          <a href="#"><img src="/static/IMAGES/cooldrink.jpg" alt="Cool Drink" class="button-image"></a>
+          <div class="image-name">Fruits & Veges</div>
+        </div>
+        <div class="image-item">
+         <a href="#"><img src="/static/IMAGES/102.jpg" alt="Beverages" class="button-image"></a>
+          <div class="image-name">Beverages</div>
+        </div>
+        <div class="image-item image-outline">
+         <a href="#"><img src="/static/IMAGES/meat.jpg" alt="Meat Products" class="button-image    _border border-primary"></a>
+          <div class="image-name">Meat Products</div>
+        </div>
+        <div class="image-item">
+        <a href="#"><img src="/static/IMAGES/eggs.jpg" alt="Eggs" class="button-image"></a>
+          <div class="image-name">Fruits & Veges</div>
+        </div>
+        <div class="image-item">
+        <a href="#"><img src="/static/IMAGES/bredes&sweets.jpg" alt="Breads & Sweets" class="button-image"></a>
+          <div class="image-name">Breads & Sweets</div>
+        </div>
+      </div>
+      <h1></h1>
+      <div class="row justify-content-center">
+        <h1>Best Selling Products</h1>
+    
+        <div class="scrolling-wrapper" id="scrollContainer">
+            <!-- Product 1 -->
+            <div class="card product-card">
+                <img src="/static/IMAGES/103.png" class="card-img-top" alt="Whole Wheat Sandwich Bread">
+                <div class="card-body text-center">
+                    <p class="card-text">Whole Wheat Sandwich Bread</p>
+                    <p>
+                        <span class="text-muted text-decoration-line-through">$100</span>  
+                        <span class="text-danger fw-bold">$80</span>
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Product 2 -->
+            <div class="card product-card">
+                <img src="/static/IMAGES/104.png" class="card-img-top" alt="Whole Grain Oatmeal">
+                <div class="card-body text-center">
+                    <p class="card-text">Whole Grain Oatmeal</p>
+                    <p>
+                        <span class="text-muted text-decoration-line-through">$100</span>  
+                        <span class="text-danger fw-bold">$80</span>
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Product 3 -->
+            <div class="card product-card">
+                <img src="/static/IMAGES/105.png" class="card-img-top" alt="Sharp Cheddar Cheese Block">
+                <div class="card-body text-center">
+                    <p class="card-text">Sharp Cheddar Cheese Block</p>
+                    <p>
+                        <span class="text-muted text-decoration-line-through">$100</span>  
+                        <span class="text-danger fw-bold">$80</span>
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Product 4 -->
+            <div class="card product-card">
+                <img src="/static/IMAGES/106.png" class="card-img-top" alt="Organic Baby Spinach">
+                <div class="card-body text-center">
+                    <p class="card-text">Organic Baby Spinach</p>
+                    <p>
+                        <span class="text-muted text-decoration-line-through">$100</span>  
+                        <span class="text-danger fw-bold">$80</span>
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Product 5 -->
+            <div class="card product-card">
+                <img src="/static/IMAGES/107.png" class="card-img-top" alt="Organic Spinach Leaves">
+                <div class="card-body text-center">
+                    <p class="card-text">Organic Spinach Leaves</p>
+                    <p>
+                        <span class="text-muted text-decoration-line-through">$100</span>  
+                        <span class="text-danger fw-bold">$80</span>
+                    </p>
+                </div>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+          <div class="card product-card" >
+            <img src="/static/IMAGES/108.png" class="card-img-top" alt="Organic Spinach Leaves">
+            <div class="card-body text-center">
+                <p class="card-text">Fresh Salmon</p>
+                <p>
+                    <span class="text-muted text-decoration-line-through">$100</span>  
+                    <span class="text-danger fw-bold">$80</span>
+                </p>
+            </div>
+        </div>
+        <div class="card product-card">
+          <img src="/static/IMAGES/109.png" class="card-img-top" alt="Organic Spinach Leaves">
+          <div class="card-body text-center">
+              <p class="card-text">Imported Italian Spaghetti Pasta</p>
+              <p>
+                  <span class="text-muted text-decoration-line-through">$100</span>  
+                  <span class="text-danger fw-bold">$80</span>
+              </p>
+          </div>
+      </div>
+      <div class="card product-card">
+        <img src="/static/IMAGES/110.png" class="card-img-top" alt="Organic Spinach Leaves">
+        <div class="card-body text-center">
+            <p class="card-text">Granny Smith Apples</p>
+            <p>
+                <span class="text-muted text-decoration-line-through">$100</span>  
+                <span class="text-danger fw-bold">$80</span>
+            </p>
+        </div>
+        </div>
+        </div>
+      </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15140.330787760351!2d79.12983!3d18.434554!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bccd93da7a843bf%3A0x8ebb3700f7840231!2sHotel%20Swetha!5e0!3m2!1sen!2sin!4v1743752165561!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+     <script src="/static/JS/script.js"></script>
+ </body>
+</html>
