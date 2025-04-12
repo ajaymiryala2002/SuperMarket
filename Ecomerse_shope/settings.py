@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-91@%bv&^0+nh*7y0ape%t#e2&t1pk2hg09!$)7mqb@%_=2(wc#
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = [ '192.168.68.126', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [ '192.168.68.126', 'localhost', '127.0.0.1','supermarket-umb3.onrender.com']
 
 
 
