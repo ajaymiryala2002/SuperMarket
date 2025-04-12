@@ -10,7 +10,7 @@ def home_page(request):
 
 def Register(request):
     message=""
-    if request.metod=='POST':
+    if request.method=='POST':
         name=request.POST.get('uname')
         email=request.POST.get('email')
         password=request.POST.get('password')
@@ -24,7 +24,7 @@ def Register(request):
             except IndentationError:
                 message='user already created'
         else:
-            message='Password incorrect'
+            message='password incorrect'
     context={
         'message':message
     }
