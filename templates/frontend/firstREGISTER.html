@@ -5,27 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+
+</style>
 <body>
     <div class="container">  
         <div class="row">
             <div class="col-6 col-md-3 col-lg-3">
                 <form method="post">
                     {% csrf_token %}
-
-                    <label>User Name:</label>
-                    <input type="text" placeholder="username" name="uname">
-                    <br>
-                    <label>Email</label>
-                    <input type="email" placeholder="Email" name="email">
-                    <br>
-                    <label>Password:</label>
-                    <input type="password" placeholder="Password" name="password">
-                    <br>
-                    <label>Comform_Password:</label>
-                    <input type="password" placeholder="con Password" name="conpassword">
-
-
-
+                    <table border="2">
+                        <tr>
+                            <td><label>User Name:</label></td>
+                            <td>  <input type="text" placeholder="username" name="uname"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email</label></td>
+                            <td><input type="email" placeholder="Email" name="email"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Password:</label></td>
+                            <td><input type="password" placeholder="Password" name="password"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Comform_Password:</label></td>
+                            <td><input type="password" placeholder="con Password" name="conpassword"></td>
+                        </tr>
+                    </table>
                 </form>
             </div>
             
