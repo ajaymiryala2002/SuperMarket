@@ -1,12 +1,65 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.db import IntegrityError
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
 
 
 def home_page(request):
     return render(request,'frontend/homepage.html')
 
-# Create your views here.
+def Register(request):
+    message=""
+    if request.metod=='POST':
+        name=request.POST.get('uname')
+        email=request.POST.get('email')
+        password=request.POST.get('password')
+        con_password=request.POST.get('conpassword')
+        if password==con_password:
+            try:
+                user=User.objects.create_user(name,email,password)
+                message='new user created successfully'
+                return render('home')
+
+            except IndentationError:
+                message='user already created'
+        else:
+            message='Password incorrect'
+    context={
+        'message':message
+    }
+    return render(request,'frontend/firstREGISTER.html',context)
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def signUpUser(request):
 
     message = ''
