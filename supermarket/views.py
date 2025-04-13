@@ -39,7 +39,7 @@ def signUpUser(request):
 
         if p1 == p2:
             try:
-                user = User.objects.create_user(username,email,p1)
+                user = User.objects.create_user(username=username,email=email,password=p1)
                 user.save()
                 message = 'User created successfully'
             except IndentationError:
