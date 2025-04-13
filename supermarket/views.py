@@ -9,9 +9,9 @@ def home_page(request):
     return render(request,'frontend/homepage.html')
 
 def Register(request):
-    message=""
+    message=""                                    
     if request.method=='POST':
-        name=request.POST.get('uname')
+        name=request.POST.get('uname')                      
         email=request.POST.get('email')
         password=request.POST.get('password')
         con_password=request.POST.get('conpassword')
@@ -20,7 +20,6 @@ def Register(request):
                 user=User.objects.create_user(name,email,password)
                 message='new user created successfully'
                 return render('home')
-
             except IndentationError:
                 message='user already created'
         else:
@@ -29,20 +28,6 @@ def Register(request):
         'message':message
     }
     return render(request,'frontend/firstREGISTER.html',context)
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
 
 
 
