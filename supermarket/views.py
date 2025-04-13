@@ -22,6 +22,7 @@ def Register(request):
                 return redirect('home')
             except IntegrityError:
                 message = 'User already exists'
+                return redirect('home')
         else:
             message = 'Passwords do not match'
 
