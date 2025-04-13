@@ -27,7 +27,7 @@ def Register(request):
     context={
         'message':message
     }
-    return render(request,'frontend/firstREGISTER.html',context)
+    return render(request,'frontend/firstREGISTER.html',{"message":message})
 
 
 def signUpUser(request):
