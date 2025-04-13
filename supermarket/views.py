@@ -19,7 +19,7 @@ def Register(request):
             try:
                 user=User.objects.create_user(name,email,password)
                 message='new user created successfully'
-                redirect ('home')
+                return redirect('home')
             except IndentationError:
                 message='user already created'
         else:
